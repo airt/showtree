@@ -5,7 +5,7 @@ object ShowTree {
   /**
     * Serialize a tree.
     *
-    * @param root root of a tree node.
+    * @param root root of a tree.
     * @return lines.
     */
   def asciiDisplay(root: TreeNode[String]): Seq[String] = {
