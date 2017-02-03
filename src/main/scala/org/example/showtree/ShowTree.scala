@@ -19,8 +19,6 @@ object ShowTree {
     * @return lines.
     */
   private[showtree] def show(node: TreeNode[String]): Seq[String] = node match {
-    case TreeNode(data, Nil) =>
-      data +: Nil
     case TreeNode(data, children) =>
       data +: showChildren(children)
   }

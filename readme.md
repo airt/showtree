@@ -1,4 +1,3 @@
-
 # showtree
 
 [![Build Status][build-badge]][build-status]

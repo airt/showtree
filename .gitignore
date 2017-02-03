@@ -1,25 +1,23 @@
+lib
+dist
+docs
+logs
+pids
+target
+project/boot
+project/plugins/project
 
-*.class
+*.pem
+*.csr
 *.log
+*.pid
+*.seed
+*.class
 
-# sbt specific
-.cache
-.history
-.lib/
-dist/*
-target/
-lib_managed/
-src_managed/
-project/boot/
-project/plugins/project/
-
-# scala ide specific
-.scala_dependencies
-.worksheet
-
-# ensime specific
-.ensime_cache/
-.ensime
-
+.lib
 .idea
+.cache
+.vscode
+.history
+
 .DS_Store
