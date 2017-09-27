@@ -8,11 +8,14 @@ class ShowTreeSpec extends FlatSpec with Matchers {
 
   "A tree node" should "display as ascii" in {
     val root =
-      TreeNode("root", List(
-        TreeNode("level-1-1"),
-        TreeNode("level-1-2"),
-        TreeNode("level-1-3")
-      ))
+      TreeNode(
+        "root",
+        List(
+          TreeNode("level-1-1"),
+          TreeNode("level-1-2"),
+          TreeNode("level-1-3")
+        )
+      )
     asciiDisplay(root) mkString "\n" should be(
       """+-root
         |  +-level-1-1
@@ -24,15 +27,24 @@ class ShowTreeSpec extends FlatSpec with Matchers {
 
   it should "display as ascii recursively" in {
     val root =
-      TreeNode("root", List(
-        TreeNode("level-1-1", List(
-          TreeNode("level-2-1", List(
-            TreeNode("level-3-1")
-          ))
-        )),
-        TreeNode("level-1-2"),
-        TreeNode("level-1-3")
-      ))
+      TreeNode(
+        "root",
+        List(
+          TreeNode(
+            "level-1-1",
+            List(
+              TreeNode(
+                "level-2-1",
+                List(
+                  TreeNode("level-3-1")
+                )
+              )
+            )
+          ),
+          TreeNode("level-1-2"),
+          TreeNode("level-1-3")
+        )
+      )
     asciiDisplay(root) map (_ stripSuffix " ") mkString "\n" should be(
       """+-root
         |  +-level-1-1
@@ -47,16 +59,25 @@ class ShowTreeSpec extends FlatSpec with Matchers {
 
   it should "display as ascii flexibly" in {
     val root =
-      TreeNode("root", List(
-        TreeNode("level-1-1", List(
-          TreeNode("level-2-1", List(
-            TreeNode("level-3-1")
-          )),
-          TreeNode("level-2-2")
-        )),
-        TreeNode("level-1-2"),
-        TreeNode("level-1-3")
-      ))
+      TreeNode(
+        "root",
+        List(
+          TreeNode(
+            "level-1-1",
+            List(
+              TreeNode(
+                "level-2-1",
+                List(
+                  TreeNode("level-3-1")
+                )
+              ),
+              TreeNode("level-2-2")
+            )
+          ),
+          TreeNode("level-1-2"),
+          TreeNode("level-1-3")
+        )
+      )
     asciiDisplay(root) map (_ stripSuffix " ") mkString "\n" should be(
       """+-root
         |  +-level-1-1

@@ -3,20 +3,20 @@ package org.example.showtree
 object ShowTree {
 
   /**
-    * Serialize a tree.
+    * Serialize a tree
     *
-    * @param root root of a tree.
-    * @return lines.
+    * @param root root of a tree
+    * @return lines
     */
   def asciiDisplay(root: TreeNode[String]): Seq[String] = {
     addPrefixes(show(root))
   }
 
   /**
-    * Serialize a tree node.
+    * Serialize a tree node
     *
-    * @param node tree node.
-    * @return lines.
+    * @param node tree node
+    * @return lines
     */
   private[showtree] def show(node: TreeNode[String]): Seq[String] = node match {
     case TreeNode(data, children) =>
@@ -24,10 +24,10 @@ object ShowTree {
   }
 
   /**
-    * Serialize children of a tree node.
+    * Serialize children of a tree node
     *
-    * @param nodes children of a tree node.
-    * @return lines.
+    * @param nodes children of a tree node
+    * @return lines
     */
   private[showtree] def showChildren(nodes: Seq[TreeNode[String]]): Seq[String] = nodes match {
     case Nil =>
@@ -39,11 +39,11 @@ object ShowTree {
   }
 
   /**
-    * Add prefixes to lines serialized from a tree node.
+    * Add prefixes to lines serialized from a tree node
     *
-    * @param lines  lines serialized from a tree node.
-    * @param isLast whether this node is the last child of its parent tree node.
-    * @return lines after processing.
+    * @param lines  lines serialized from a tree node
+    * @param isLast whether this node is the last child of its parent tree node
+    * @return lines after processing
     */
   private[showtree] def addPrefixes(lines: Seq[String], isLast: Boolean = true): Seq[String] = {
     val dataLine +: childrenLines = lines
